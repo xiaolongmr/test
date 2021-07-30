@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>VIP视频解析 - 复制的代码</title>
+    <meta name="keywords" content="vip视频解析,vip视频在线解析,vip解析,万能vip视频解析,vip视频全能解析,vip视频,手机vip视频解析,手机在线解析vip视频,优酷vip解析,爱奇艺vip解析,腾讯vip解析,乐视vip解析,芒果vip解析">
+    <meta name="description" content="解析VIP视频免费看,在线解析,vip视频解析,优酷vip解析,爱奇艺vip解析,腾讯vip解析,乐视vip解析,芒果vip解析,方便广大用户VIP视频服务!">
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+    <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+
+<body background="https://bit-images.bj.bcebos.com/bit-new/file/20210422/6szf.png" style="background-repeat:no-repeat; background-size:100% 100%; background-attachment:fixed;">
+    <!-- 你的HTML代码 -->
+    <div class="dropdown" style="float:left; top:50px; left:80px;">
+        <button class="dropbtn">视频网站列表</button>
+        <div class="dropdown-content" style="left:0;">
+            <a href="https://www.iqiyi.com" target="_blank">爱奇艺</a>
+            <a href="https://www.youku.com" target="_blank">优酷视频</a>
+            <a href="https://v.qq.com" target="_blank">腾讯视频</a>
+            <a href="https://www.le.com" target="_blank">乐视视频</a>
+            <a href="https://www.miguvideo.com" target="_blank">咪咕视频</a>
+            <a href="https://tv.sohu.com" target="_blank">搜狐视频</a>
+            <a href="http://www.pptv.com" target="_blank">PPTV视频</a>
+            <a href="https://www.bilibili.com" target="_blank">哔哩哔哩</a>
+            <a href="https://www.wasu.cn" target="_blank">华数TV</a>
+            <a href="https://www.mgtv.com" target="_blank">芒果TV</a>
+            <a href="https://www.ixigua.com" target="_blank">西瓜视频</a>
+            <a href="https://www.1905.com" target="_blank">1905电影</a>
+        </div>
+    </div>
+    <div class="layui-container">
+        <div class="layui-row" style="height:45px">
+        </div>
+        <div class="layui-row">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <div class="layui-col-md2">
+                        <div class="layui-inline">
+                            <select id="interface" lay-verify="">
+                    <option value="0">万能接口1</option>
+                    <option value="1">万能接口2</option>
+                    <option value="2">万能接口3</option>
+                    <option value="3">万能接口4</option>
+                    <option value="4">万能接口5</option>
+                    <option value="5">万能接口6</option>
+                    <option value="6">万能接口7</option>
+                    <option value="7">万能接口8</option>
+                    <option value="8">万能接口9</option>
+                    <option value="9">bilibili解析</option>
+                  </select>
+                        </div>
+                    </div>
+                    <div class="layui-col-md8">
+                        <input type="text" name="address" required lay-verify="required" placeholder="全网Vip视频在线解析，输入视频播放地址，如：http://v.youku.com/v_show/id_xxxx" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-col-md2">
+
+                        <button type="button" class="layui-btn layui-btn-fluid">立即播放</button>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <!--视频-->
+        <br>
+        <div class="layui-row" style="height:600px">
+            <iframe id="player" src="https://z1.m1907.cn" width="100%" height="100%" allowTransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <br>
+        <p style="color:white">支持腾讯，优酷，爱奇艺，PPTV, 搜狐，芒果，乐视，M3U8等VIP视频解析! 如果遇到 视频无法解析的，通知QQ处理！解析仅支持学习交流，勿用非法用途!本站不承担任何 责任!
+        </p>
+        <br>
+        <p align="center" style="color:white">Copyright © 2021 bilibili.ga</p>
+
+    </div>
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+    <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+    <script>
+        //一般直接写在一个js文件中
+        layui.use(['layer', 'form'], function() {
+            var layer = layui.layer,
+                form = layui.form;
+            //  layer.msg('请添加播放地址，无需等待广告结束！！！');
+        });
+        $(document).ready(function() {
+            $("button").click(function() {
+                var address = $('input[name="address"]').val();
+                var itemValue1 = $("#interface").val();
+                if (address != "") {
+
+                    if (itemValue1 == 0) {
+                        $('#player').attr('src', "https://parse.xymov.net/?v=" + address);
+                    } else if (itemValue1 == 1) {
+                        $('#player').attr('src', "https://api.sigujx.com/?url=" + address);
+                    } else if (itemValue1 == 2) {
+                        $('#player').attr('src', "https://www.nxflv.com/?url=" + address);
+                    } else if (itemValue1 == 3) {
+                        $('#player').attr('src', "https://www.1717yun.com/jiexi/?url=" + address);
+                    } else if (itemValue1 == 4) {
+                        $('#player').attr('src', "https://api.52wyb.com/webcloud/?v=" + address);
+                    } else if (itemValue1 == 5) {
+                        $('#player').attr('src', "https://jx.147g.cc/?url=" + address);
+                    } else if (itemValue1 == 6) {
+                        $('#player').attr('src', "https://jx.618g.com/?url=" + address);
+                    } else if (itemValue1 == 7) {
+                        $('#player').attr('src', "https://www.8090.la/api/?url=" + address);
+                    } else if (itemValue1 == 8) {
+                        $('#player').attr('src', "https://www.playm3u8.cn/jiexi.php?url=" + address);
+                    } else if (itemValue1 == 9) {
+                        $('#player').attr('src', "https://vip.parwix.com:4433/player/?url=" + address);
+                    }
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>
