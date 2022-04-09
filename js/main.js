@@ -249,7 +249,7 @@ $(function() {
             name: '微信',
             icon: 'https://iqiyi.cf/svg/wechat.svg',
             color: '#ff0030',
-            url: 'https://weixin.sogou.com/weixinwap?type=2&query='
+            url: 'https://weixin.sogou.com/weixin?type=2&s_from=input&query='
         }, {
             name: '知乎',
             icon: 'https://iqiyi.cf/svg/zhihu.svg',
