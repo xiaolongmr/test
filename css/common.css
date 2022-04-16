@@ -1,0 +1,926 @@
+#body {
+    width: 100%;
+    height: 100%;
+}
+
+.changebg {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: 0;
+    top: 0;
+    z-index: 10;
+}
+
+#setBackGround {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+#sideBar {
+    position: absolute;
+    width: 350px;
+    right: -350px;
+    top: 0;
+    bottom: 0;
+    font-size: 28px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#sideBarButton {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    top: 10px;
+    font-size: 32px;
+    transform: scale(0.8);
+    transition: .3s;
+    overflow: hidden;
+    /* border-radius: 5px;
+    box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.13), 0px 0.3px 0.9px rgba(0, 0, 0, 0.11); */
+}
+
+#sideBarButton img {
+    width: 70%;
+}
+
+#sideBarButton:hover {
+    cursor: pointer;
+}
+
+#sideBarContent,
+.move {
+    height: 100%;
+    display: inline-block;
+}
+
+#sideBarTitle {
+    width: 342px;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 30px;
+    display: flex;
+    background: rgba(0, 0, 0, 0.11);
+}
+
+#sideBarContent {
+    width: 350px;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+    /*box-shadow: inset 1px 1px 0 rgba(231, 231, 231, .9);*/
+}
+
+
+/*滚动条宽高*/
+
+#sideBarContent::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+
+/*正常情况下滑块的样式*/
+
+#sideBarContent::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 197, 73, .6);
+    border-radius: 2px;
+}
+
+
+/*鼠标悬浮在该类指向的控件上时滑块的样式*/
+
+#sideBarContent:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 197, 73, .6);
+    box-shadow: inset 1px 1px 0 rgba(255, 197, 73, .1);
+}
+
+
+/*鼠标悬浮在滑块上时滑块的样式*/
+
+#sideBarContent::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 197, 73, .6);
+    box-shadow: inset 1px 1px 0 rgba(255, 197, 73, .1);
+}
+
+
+/*正常时候的主干部分/滑轨部分*/
+
+#sideBarContent::-webkit-scrollbar-track {
+    /* border-radius: 10px; */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .04);
+    background-color: rgba(231, 231, 231, .01);
+}
+
+
+/*鼠标悬浮在滚动条上的主干部分/滑轨部分*/
+
+#sideBarContent::-webkit-scrollbar-track:hover {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .04);
+    background-color: rgba(231, 231, 231, .01);
+}
+
+#sideBarContent p {
+    box-sizing: border-box;
+    margin: 0 10px 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #8F8F8F;
+    font-size: 18px;
+    color: #8F8F8F;
+}
+
+#sideBarContent p img {
+    width: 16px;
+    height: 16px;
+}
+
+#scrollContent {
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.moveLeft {
+    animation: moveLeft 0.5s forwards;
+}
+
+.moveRight {
+    animation: moveRight 0.5s forwards;
+}
+
+.sideBarButtonMoveLeft {
+    animation: sideBarButtonMoveLeft 0.5s forwards;
+}
+
+.sideBarButtonMoveRight {
+    animation: sideBarButtonMoveRight 0.5s forwards;
+}
+
+.messageMoveLeft {
+    animation: messageMoveLeft 0.5s forwards;
+}
+
+.messageMoveRight {
+    animation: messageMoveRight 0.5s forwards;
+}
+
+.title-icon {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 22px;
+    box-sizing: border-box;
+    padding: 3px 0;
+    color: #8f8f8f !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.title-icon:hover {
+    color: #5f5f5f;
+    font-weight: 600;
+}
+
+.title-icon i {
+    width: 25px;
+    height: 25px;
+}
+
+.title-icon img {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 5px 5px 5px 40px;
+}
+
+.title-icon span {
+    font-size: 14px;
+    float: left;
+}
+
+.title-icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.capsule-content {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+}
+
+.capsule {
+    width: 82px;
+    height: 28px;
+    margin: 8px auto;
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+    /*background: #FFFFFF;*/
+    border-radius: 2px;
+}
+
+.capsule:hover {
+    box-shadow: 0 1px 0 0 #FFC549;
+    cursor: pointer;
+}
+
+.capsule::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.capsule span {
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddd;
+}
+
+.capsule span img {
+    width: 24px;
+    height: 24px;
+}
+
+.capsule div {
+    line-height: 24px;
+    /* font-weight: bolder; */
+    display: block;
+    font-family: 微软雅黑, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 13px;
+    text-align: center;
+}
+
+.capsule input:hover {
+    cursor: pointer;
+}
+
+.setlist,
+.aboutContent {
+    box-sizing: border-box;
+    margin: 10px 15px;
+    padding: 6px 10px;
+    font-size: 16px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.setlist {
+    padding: 3px 5px;
+    font-size: 14px;
+}
+
+.setlist:hover {
+    cursor: pointer;
+}
+
+.setlist::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.setlist a {
+    position: relative;
+    z-index: 3;
+}
+
+.setlist input:hover {
+    cursor: pointer;
+}
+
+.aboutInfo span {
+    display: block;
+}
+
+.aboutInfo span:nth-child(2) {
+    text-indent: 20px;
+}
+
+.innerlist {
+    margin-left: 30px;
+}
+
+#commonUse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.commons {
+    overflow: hidden;
+    margin: 4px;
+    position: relative;
+    z-index: 1;
+    width: 88px;
+    height: 66px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 4px;
+    box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.13), 0px 0.3px 0.9px rgba(0, 0, 0, 0.11);
+    background: rgba(210, 221, 228, 0.514);
+}
+
+.commons-content {
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    border-radius: 4px;
+}
+
+.commons-content img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #F9F9F9;
+}
+
+.commons-content .text-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-top: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.commons-content a {
+    font-size: 12px;
+    line-height: 16px;
+    overflow: hidden;
+    box-sizing: content-box;
+    max-height: 16px;
+    white-space: nowrap;
+    max-width: 100%;
+    margin: 7px 0 0 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: inherit;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    color: #2B2B2B;
+}
+
+.commons-content a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.commons-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 4px;
+    background: transparent;
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    right: 4px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    fill: #2B2B2B;
+}
+
+.commons-btn:hover {
+    opacity: 1;
+    background: rgba(210, 221, 228, 0.514);
+}
+
+.commons-btn::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.commons-addbtn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.commons-addbtn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.commons a {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#copyright {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+}
+
+#copyright a {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    transition: 0.5s;
+    color: darkgray;
+}
+
+#messageList {
+    position: fixed;
+    z-index: 2001;
+    top: 40px;
+    right: 20px;
+    transition: 0.5s;
+}
+
+#messageList li {
+    overflow: hidden;
+    position: relative;
+    right: -350px;
+    width: 350px;
+    height: 80px;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding-right: 15px;
+    transition: 0.5s;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    border-radius: 5px;
+}
+
+#messageList div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 40px;
+}
+
+#messageList div:nth-child(2) {
+    width: 80%;
+    height: 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#messageList p {
+    margin: 0;
+}
+
+#messageList p:nth-child(1) {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#messageList p:nth-child(2) {
+    font-size: 14px;
+    margin: 5px;
+}
+
+#messageList .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin: 0 -5px 40px 0;
+    background: url(../img/closeDialog.svg) no-repeat center;
+}
+
+#messageList .close:hover {
+    cursor: pointer;
+}
+
+#messageList .success {
+    background: url(../img/successDialog.svg) no-repeat center;
+}
+
+#messageList .error {
+    background: url(../img/errorDialog.svg) no-repeat center;
+}
+
+#dialogWrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.34);
+    transition: 0.3s;
+}
+
+#dialog {
+    position: relative;
+    overflow: hidden;
+    min-width: 350px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 10px;
+    background: #FFFFFF;
+}
+
+#dialog>.dialog-header {
+    box-sizing: border-box;
+    padding: 20px 20px 10px;
+    text-align: left;
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+}
+
+#dialog>.dialog-header #closeDialog {
+    color: #909399;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    top: -14px;
+    right: -14px;
+}
+
+#dialog>.dialog-header #closeDialog img {
+    margin: 4px;
+}
+
+#dialog>.dialog-header #closeDialog:hover {
+    background: rgba(210, 221, 228, 0.514);
+}
+
+#dialog>.dialog-header #closeDialog::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#dialog>.dialog-body {
+    box-sizing: border-box;
+    padding: 0 12px;
+}
+
+#dialog .content-label {
+    display: inline-flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #606266;
+}
+
+#dialog input {
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    padding: 0 15px;
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+    border: 1px solid #BEBEBE;
+    width: 260px;
+    padding: 0 8px;
+    margin: 0 8px;
+}
+
+#dialog input:hover {
+    cursor: pointer;
+    border: 1px solid #c2c4ca;
+}
+
+#dialog p {
+    margin: 0;
+}
+
+#dialog>.dialog-footer {
+    box-sizing: border-box;
+    padding: 10px 20px 20px;
+    text-align: right;
+}
+
+#dialog>.dialog-footer span {
+    margin: 0 3px;
+}
+
+#dialog>.dialog-footer span #submitDialog,
+#dialog>.dialog-footer span #changeDialog,
+#dialog>.dialog-footer span #saveDialog {
+    color: #FFFFFF;
+    fill: #FFFFFF;
+    background: #0078D4;
+}
+
+#dialog button {
+    padding: 7px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: .1s;
+    font-weight: 500;
+}
+
+#dialog button:hover {
+    border: 1px solid #c2c4ca;
+}
+
+.show-data {
+    text-align: center;
+    height: 300px;
+    overflow: auto;
+    font-size: 14px;
+    color: #212529;
+}
+
+.show-data-table {
+    width: 100%;
+    position: relative;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.show-data-table .no-data {
+    height: 240px;
+    font-size: 14px;
+}
+
+.show-data-table thead,
+.show-data-table tbody {
+    width: 100%;
+}
+
+.show-data-table th {
+    font-weight: bold;
+}
+
+.show-data-table th,
+.show-data-table td {
+    padding: .5em;
+    border-top: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+}
+
+.show-data-table td:last-child {
+    cursor: pointer;
+    text-align: center;
+}
+
+.show-data-table td:last-child span:hover {
+    color: #2196F3;
+}
+
+.tab-color {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: auto;
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background: #ffffff;
+}
+
+#loading .pic {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#loading .pic i {
+    display: block;
+    float: left;
+    width: 6px;
+    height: 50px;
+    background: #399;
+    margin: 0 2px;
+    transform: scaleY(0.4);
+    border-radius: 3px;
+    background-color: #f66;
+    animation: load 1.4s ease-in-out infinite;
+}
+
+#loading .pic i:nth-child(1) {
+    animation-delay: 0.2s
+}
+
+#loading .pic i:nth-child(2) {
+    animation-delay: 0.4s
+}
+
+#loading .pic i:nth-child(3) {
+    animation-delay: 0.6s
+}
+
+#loading .pic i:nth-child(4) {
+    animation-delay: 0.8s
+}
+
+#loading .pic i:nth-child(5) {
+    animation-delay: 1s
+}
+
+@keyframes moveLeft {
+    from {
+        right: -350px;
+    }
+    to {
+        right: 0;
+    }
+}
+
+@keyframes moveRight {
+    from {
+        right: 0;
+    }
+    to {
+        right: -350px;
+    }
+}
+
+@keyframes sideBarButtonMoveLeft {
+    from {
+        right: 10px;
+    }
+    to {
+        right: 350px;
+    }
+}
+
+@keyframes sideBarButtonMoveRight {
+    from {
+        right: 350px;
+    }
+    to {
+        right: 10px;
+    }
+}
+
+@keyframes messageMoveLeft {
+    from {
+        right: -350px;
+    }
+    to {
+        right: 0;
+    }
+}
+
+@keyframes messageMoveRight {
+    from {
+        right: 0;
+    }
+    to {
+        right: -350px;
+    }
+}
+
+@keyframes load {
+    0%,
+    20%,
+    40%,
+    60%,
+    100% {
+        transform: scaleY(0.4)
+    }
+    20% {
+        transform: scaleY(1)
+    }
+}
+
+@media (max-width: 640px) {
+    #sideBar,
+    #sideBarTitle,
+    #sideBarContent {
+        width: 230px;
+    }
+    .capsule-content {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+    #messageList li {
+        width: 300px;
+    }
+    .title-icon img {
+        margin: 5px 5px 5px 10px;
+    }
+    #scrollContent {
+        padding: 8px;
+    }
+    @keyframes sideBarButtonMoveLeft {
+        from {
+            right: 10px;
+        }
+        to {
+            right: 240px;
+        }
+    }
+    @keyframes sideBarButtonMoveRight {
+        from {
+            right: 240px;
+        }
+        to {
+            right: 10px;
+        }
+    }
+}
