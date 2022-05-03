@@ -205,12 +205,14 @@ $(function() {
             icon: 'https://iqiyi.cf/svg/baidu.svg',
             color: '#3385ff',
             url: 'https://www.baidu.com/s?wd='
-        }, {
-            name: '谷歌',
-            icon: 'https://iqiyi.cf/svg/google.svg',
-            color: '#4c8bf5',
-            url: 'https://www.google.com/search?q='
-        }, {
+        }, 
+        // {
+        //     name: '谷歌',
+        //     icon: 'https://iqiyi.cf/svg/google.svg',
+        //     color: '#4c8bf5',
+        //     url: 'https://www.google.com/search?q='
+        // }, 
+        {
             name: '必应',
             color: '#0a8583',
             icon: 'https://iqiyi.cf/svg/bing.svg',
