@@ -6,7 +6,7 @@ i[class^=logo] {
     width: 40px;
     text-indent: 3.5em;
     border-radius: 50%;
-    background-image: url(https://cdn.jsdelivr.net/gh/xiaolongmr/test@main/img/logo220416.webp);
+    background-image: url(https://fastly.jsdelivr.net/gh/xiaolongmr/test@main/img/logo220416.webp);
     background-size: 400px 520px;
     background-repeat: no-repeat;
 }
