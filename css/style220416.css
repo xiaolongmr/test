@@ -686,8 +686,11 @@
         /* background-color: transparent;
     color: #999; */
     }
-    /* 网页客服代码去除部分 */
-    
+    /* 网页客服代码去除部分  暂时用这个*/
+    .crisp-client .cc-52lo .cc-kegp .cc-1apq .cc-1jpm .cc-ggw8 .cc-1tgm .cc-1emi {
+        text-align: center!important;
+        display: none!important;
+    }
     .crisp-client .cc-kv6t .cc-1xry .cc-ge4v .cc-qqzz .cc-5b24 .cc-19cg .cc-z2iy {
         /* font-size: 60px !important; */
         /* 字体足够大就会错位看不到 */
