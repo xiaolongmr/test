@@ -32,7 +32,7 @@
     
     a {
         text-decoration: none;
-        cursor: url(https://github-do.panbaidu.cn/https://raw.githubusercontent.com/xiaolongmr/test/main/cur/a1.png), default;
+        cursor: url(https://iqiyi.cf/cur/a1.png), default;
     }
     
     body {
@@ -41,7 +41,7 @@
         font-family: Helvetica Neue, Microsoft Yahei;
         overflow-x: hidden !important;
         /* 去除横向滚动条 添加日期2022/04/04 */
-        cursor: url(https://github-do.panbaidu.cn/https://raw.githubusercontent.com/xiaolongmr/test/main/cur/body.png), default;
+        cursor: url(https://iqiyi.cf/cur/body.png), default;
     }
     /* .container,
     .main {
@@ -179,7 +179,7 @@
     /* 本站网址的颜色 */
     
     .nav .item a {
-        color: #fff
+        color: #bee8ff;
     }
     /* 这是本站网址的强制一行显示 */
     
@@ -191,8 +191,7 @@
         white-space: nowrap;
         /* 文本强制一行显示     */
     }
-    /* 同一目录标签的详情解释
-字体略小 */
+    /* 同一目录标签的详情解释字体略小 */
     
     .box .sub-category span {
         font-size: 13px;
@@ -563,7 +562,7 @@
     /* ======✨✨【小尬聊天室】✨✨ 修改日期：2022/03/25 ======*/
     
     #ctrm_ .ctrm-textarea textarea {
-        background: #ffffff url(https://gcore.jsdelivr.net/gh/drew233/cdn/20200409110727.webp) no-repeat !important;
+        background: #ffffff url(https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp) no-repeat !important;
         background-position: top right !important;
     }
     
@@ -686,11 +685,8 @@
         /* background-color: transparent;
     color: #999; */
     }
-    /* 网页客服代码去除部分  暂时用这个*/
-    .crisp-client .cc-52lo .cc-kegp .cc-1apq .cc-1jpm .cc-ggw8 .cc-1tgm .cc-1emi {
-        text-align: center!important;
-        display: none!important;
-    }
+    /* 网页客服代码去除部分 2022.05.26 失效了 */
+    
     .crisp-client .cc-kv6t .cc-1xry .cc-ge4v .cc-qqzz .cc-5b24 .cc-19cg .cc-z2iy {
         /* font-size: 60px !important; */
         /* 字体足够大就会错位看不到 */
